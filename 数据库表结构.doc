@@ -1,0 +1,516 @@
+
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<!--<html>-->
+<h3>&nbsp;
+    创建外键索引语句:
+</h3>
+
+<pre style="padding: 20px; display: block; background: #d5d5d5;font-size: 12px">
+;
+ALTER TABLE kecheng ADD FOREIGN KEY (leixing) REFERENCES kechengleixing(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE yuyue ADD FOREIGN KEY (kechengid) REFERENCES kecheng(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE yuyue ADD FOREIGN KEY (leixing) REFERENCES kechengleixing(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE quxiaoyuyue ADD FOREIGN KEY (yuyueid) REFERENCES yuyue(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE quxiaoyuyue ADD FOREIGN KEY (kechengid) REFERENCES kecheng(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE quxiaoyuyue ADD FOREIGN KEY (leixing) REFERENCES kechengleixing(id) ON UPDATE CASCADE ON DELETE CASCADE</pre>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【管理员】模块,表名：<span style="color: #990000">admins</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>cx</td>
+        <td>varchar(50)</td>
+        <td>权限 </td>
+    </tr>
+        <tr>
+        <td>username</td>
+        <td>varchar(50)</td>
+        <td>帐号 </td>
+    </tr>
+        <tr>
+        <td>pwd</td>
+        <td>varchar(128)</td>
+        <td>密码 </td>
+    </tr>
+        <tr>
+        <td>xingming</td>
+        <td>varchar(50)</td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>shouji</td>
+        <td>varchar(50)</td>
+        <td>手机 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【微信用户】模块,表名：<span style="color: #990000">wxuser</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>openid</td>
+        <td>varchar(50)</td>
+        <td>用户 </td>
+    </tr>
+        <tr>
+        <td>nickName</td>
+        <td>varchar(50)</td>
+        <td>昵称 </td>
+    </tr>
+        <tr>
+        <td>avatarUrl</td>
+        <td>varchar(255)</td>
+        <td>头像 </td>
+    </tr>
+        <tr>
+        <td>gender</td>
+        <td>int</td>
+        <td>性别 </td>
+    </tr>
+        <tr>
+        <td>country</td>
+        <td>varchar(50)</td>
+        <td>国家 </td>
+    </tr>
+        <tr>
+        <td>province</td>
+        <td>varchar(50)</td>
+        <td>省份 </td>
+    </tr>
+        <tr>
+        <td>city</td>
+        <td>varchar(50)</td>
+        <td>城市 </td>
+    </tr>
+        <tr>
+        <td>longitude</td>
+        <td>varchar(50)</td>
+        <td>经度 </td>
+    </tr>
+        <tr>
+        <td>latitude</td>
+        <td>varchar(50)</td>
+        <td>纬度 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【场馆】模块,表名：<span style="color: #990000">changguan</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>bianhao</td>
+        <td>varchar(50)</td>
+        <td>编号 </td>
+    </tr>
+        <tr>
+        <td>changguanmingcheng</td>
+        <td>varchar(255)</td>
+        <td>场馆名称 </td>
+    </tr>
+        <tr>
+        <td>tupian</td>
+        <td>varchar(255)</td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>xiangqing</td>
+        <td>longtext</td>
+        <td>详情 </td>
+    </tr>
+        <tr>
+        <td>tianjiaren</td>
+        <td>varchar(50)</td>
+        <td>添加人 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【课程】模块,表名：<span style="color: #990000">kecheng</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>bianhao</td>
+        <td>varchar(50)</td>
+        <td>编号 </td>
+    </tr>
+        <tr>
+        <td>kechengmingcheng</td>
+        <td>varchar(255)</td>
+        <td>课程名称 </td>
+    </tr>
+        <tr>
+        <td>leixing</td>
+        <td>int</td>
+        <td>类型 </td>
+    </tr>
+        <tr>
+        <td>tupian</td>
+        <td>varchar(255)</td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>kechengxiangqing</td>
+        <td>longtext</td>
+        <td>课程详情 </td>
+    </tr>
+        <tr>
+        <td>tianjiaren</td>
+        <td>varchar(50)</td>
+        <td>添加人 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="3">
+                设置索引，
+                字段：leixing ，
+                关联表【kechengleixing】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【预约】模块,表名：<span style="color: #990000">yuyue</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>kechengid</td>
+        <td>int</td>
+        <td>课程id </td>
+    </tr>
+        <tr>
+        <td>bianhao</td>
+        <td>varchar(50)</td>
+        <td>编号 </td>
+    </tr>
+        <tr>
+        <td>kechengmingcheng</td>
+        <td>varchar(255)</td>
+        <td>课程名称 </td>
+    </tr>
+        <tr>
+        <td>leixing</td>
+        <td>int</td>
+        <td>类型 </td>
+    </tr>
+        <tr>
+        <td>tianjiaren</td>
+        <td>varchar(50)</td>
+        <td>添加人 </td>
+    </tr>
+        <tr>
+        <td>yuyueshijian</td>
+        <td>varchar(25)</td>
+        <td>预约时间 </td>
+    </tr>
+        <tr>
+        <td>yuyuerenxingming</td>
+        <td>varchar(50)</td>
+        <td>预约人姓名 </td>
+    </tr>
+        <tr>
+        <td>dianhua</td>
+        <td>varchar(50)</td>
+        <td>电话 </td>
+    </tr>
+        <tr>
+        <td>beizhu</td>
+        <td>text</td>
+        <td>备注 </td>
+    </tr>
+        <tr>
+        <td>zhuangtai</td>
+        <td>varchar(50)</td>
+        <td>状态 </td>
+    </tr>
+        <tr>
+        <td>yuyueren</td>
+        <td>varchar(50)</td>
+        <td>预约人 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="3">
+                设置索引，
+                字段：kechengid ，
+                关联表【kecheng】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：leixing ，
+                关联表【kechengleixing】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【课程类型】模块,表名：<span style="color: #990000">kechengleixing</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>leixingmingcheng</td>
+        <td>varchar(255)</td>
+        <td>类型名称 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【取消预约】模块,表名：<span style="color: #990000">quxiaoyuyue</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>yuyueid</td>
+        <td>int</td>
+        <td>预约id </td>
+    </tr>
+        <tr>
+        <td>kechengid</td>
+        <td>int</td>
+        <td>课程id </td>
+    </tr>
+        <tr>
+        <td>bianhao</td>
+        <td>varchar(50)</td>
+        <td>编号 </td>
+    </tr>
+        <tr>
+        <td>kechengmingcheng</td>
+        <td>varchar(255)</td>
+        <td>课程名称 </td>
+    </tr>
+        <tr>
+        <td>leixing</td>
+        <td>int</td>
+        <td>类型 </td>
+    </tr>
+        <tr>
+        <td>yuyuerenxingming</td>
+        <td>varchar(50)</td>
+        <td>预约人姓名 </td>
+    </tr>
+        <tr>
+        <td>tianjiaren</td>
+        <td>varchar(50)</td>
+        <td>添加人 </td>
+    </tr>
+        <tr>
+        <td>quxiaoyuanyin</td>
+        <td>text</td>
+        <td>取消原因 </td>
+    </tr>
+        <tr>
+        <td>quxiaoren</td>
+        <td>varchar(50)</td>
+        <td>取消人 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="3">
+                设置索引，
+                字段：yuyueid ，
+                关联表【yuyue】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：kechengid ，
+                关联表【kecheng】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：leixing ，
+                关联表【kechengleixing】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【BMI值】模块,表名：<span style="color: #990000">bmizhi</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>riqi</td>
+        <td>varchar(25)</td>
+        <td>日期 </td>
+    </tr>
+        <tr>
+        <td>shengao</td>
+        <td>decimal(10, 2)</td>
+        <td>身高 </td>
+    </tr>
+        <tr>
+        <td>tizhong</td>
+        <td>decimal(10, 2)</td>
+        <td>体重 </td>
+    </tr>
+        <tr>
+        <td>bmizhi</td>
+        <td>decimal(10, 2)</td>
+        <td>BMI值 </td>
+    </tr>
+        <tr>
+        <td>tianjiaren</td>
+        <td>varchar(50)</td>
+        <td>添加人 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【轮播图】模块,表名：<span style="color: #990000">lunbotu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>title</td>
+        <td>varchar(50)</td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>image</td>
+        <td>varchar(255)</td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>url</td>
+        <td>varchar(255)</td>
+        <td>连接地址 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+
+
+</html>
