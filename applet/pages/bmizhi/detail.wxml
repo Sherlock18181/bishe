@@ -1,0 +1,25 @@
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 日期 </view>
+            <view style="color: #999999"> {{ map.riqi }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 身高 </view>
+            <view style="color: #999999"> {{ map.shengao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 体重 </view>
+            <view style="color: #999999"> {{ map.tizhong }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> BMI值 </view>
+            <view style="color: #999999"> {{ map.bmizhi }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+<v-footer />

@@ -1,0 +1,19 @@
+<view class="recruitment-list">
+    <navigator wx:for="{{ lists }}" wx:for-item="map" url="/pages/quxiaoyuyue/detail?id={{map.id}}">
+        <view class="recruitment-info">
+            <view class="info-btn mb10">
+                <van-button plain type="warning" size="small">查看</van-button>
+            </view>
+            <view class="info-title mb10"> {{ map.kechengmingcheng }} </view>
+            <view class="info-gongzi mb10">
+                <view class="gongzi"> {{ map.yuyuerenxingming }} </view>
+                <view class="danwei" wx:if="{{ map.yuyuerenxingming != '' }}"></view>
+                <view class="leixing"> <e-select-view module="kechengleixing" value="{{ map.leixing }}" select="id" show="leixingmingcheng"></e-select-view> </view>
+            </view>
+            <view class="dizhi-and-mingcheng mb10">
+                <view class="dizhi"> {{ map.yuyuerenxingming }} </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<v-footer />

@@ -1,0 +1,12 @@
+<van-cell-group>
+    <van-cell title="日期" value="{{ form.riqi }}" label="{{ errors.riqi }}" bind:click="onShowriqi" />
+    <van-popup show="{{ showriqi }}" closeable position="bottom" bind:close="onCloseriqi">
+        <van-datetime-picker type="date" show-toolbar="{{ false }}" data-format="Y-m-d" value="{{ currentriqi }}" data-name="form.riqi" bind:input="onDate" />
+    </van-popup>
+
+    <van-field type="number" error-message="{{ errors.shengao }}" label="身高" placeholder="输入身高" value="{{ form.shengao }}" bindinput="onInput" data-name="form.shengao" />
+    <van-field type="number" error-message="{{ errors.tizhong }}" label="体重" placeholder="输入体重" value="{{ form.tizhong }}" bindinput="onInput" data-name="form.tizhong" />
+</van-cell-group>
+
+<van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">保存</van-button>
+<v-footer />

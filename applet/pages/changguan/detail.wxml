@@ -1,0 +1,23 @@
+<e-img src="{{ map.tupian }}" pb="100"></e-img>
+
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 编号 </view>
+            <view style="color: #999999"> {{ map.bianhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 场馆名称 </view>
+            <view style="color: #999999"> {{ map.changguanmingcheng }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+
+<view style="padding-bottom: 20rpx">
+    <view style="padding: 30rpx; line-height: 26px"> <rich-text nodes="{{ map.xiangqing }}"></rich-text> </view>
+</view>
+<v-footer />

@@ -1,0 +1,52 @@
+.recruitment-info {
+  padding: 20rpx;
+  position: relative;
+  font-size: 26rpx;
+  border-bottom: 4rpx #dedede solid;
+}
+.recruitment-info .info-btn {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.recruitment-info .info-title {
+  font-size: 40rpx;
+}
+.recruitment-info .info-gongzi {
+  display: flex;
+  align-items: flex-end;
+}
+.recruitment-info .info-gongzi .gongzi {
+  margin-right: 10rpx;
+  color: #ff552e;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+.recruitment-info .info-gongzi .danwei {
+  color: #ff552e;
+  margin-right: 10rpx;
+}
+.recruitment-info .info-gongzi .leixing {
+  color: #999;
+  font-size: 24rpx;
+}
+.recruitment-info .dizhi-and-mingcheng {
+  display: flex;
+  align-items: flex-end;
+  color: #999;
+}
+.recruitment-info .dizhi-and-mingcheng .dizhi {
+  margin-right: 10rpx;
+  padding-right: 10rpx;
+  border-right: 4rpx solid #dedede;
+}
+.recruitment-info .tags {
+  display: flex;
+}
+.recruitment-info .tags .tag {
+  margin-right: 10rpx;
+}
+.recruitment-info:last-child {
+  border-bottom: none;
+}

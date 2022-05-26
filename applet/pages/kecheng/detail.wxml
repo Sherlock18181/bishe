@@ -1,0 +1,39 @@
+<e-img src="{{ map.tupian }}" pb="100"></e-img>
+
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 编号 </view>
+            <view style="color: #999999"> {{ map.bianhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 课程名称 </view>
+            <view style="color: #999999"> {{ map.kechengmingcheng }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 类型 </view>
+            <view style="color: #999999"> <e-select-view module="kechengleixing" value="{{ map.leixing }}" select="id" show="leixingmingcheng"></e-select-view> </view>
+        </van-cell>
+
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 添加人 </view>
+            <view style="color: #999999"> {{ map.tianjiaren }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+<view style="padding: 20px;">
+        <navigator wx:if="{{ map.yuyueCount == 0 }}" url="/pages/yuyue/add?id={{map.id}}">
+        <van-button type="primary" block>预约</van-button>
+        </navigator>
+        <view wx:else style="text-align: center;">
+            已预约
+        </view>
+    </view>
+<view style="padding-bottom: 20rpx">
+    <view style="padding: 30rpx; line-height: 26px"> <rich-text nodes="{{ map.kechengxiangqing }}"></rich-text> </view>
+</view>
+<v-footer />

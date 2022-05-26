@@ -1,0 +1,22 @@
+<van-cell-group>
+    <van-cell title="编号">
+        <view> {{ form.bianhao }} </view>
+    </van-cell>
+
+    <van-cell title="课程名称">
+        <view> {{ form.kechengmingcheng }} </view>
+    </van-cell>
+
+    <van-cell title="类型">
+        <view> <e-select-view module="kechengleixing" value="{{ form.leixing }}" select="id" show="leixingmingcheng"></e-select-view> </view>
+    </van-cell>
+
+    <van-cell title="预约人姓名">
+        <view> {{ form.yuyuerenxingming }} </view>
+    </van-cell>
+
+    <van-field type="textarea" autosize placeholder="请输入取消原因..." value="{{ form.quxiaoyuanyin }}" data-name="form.quxiaoyuanyin" bindinput="onInput"></van-field>
+</van-cell-group>
+
+<van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">保存</van-button>
+<v-footer />

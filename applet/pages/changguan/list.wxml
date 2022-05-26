@@ -1,0 +1,12 @@
+<view>
+    <view class="e-card-list" wx:for="{{ changguanlist1 }}" wx:for-item="v">
+        <view class="flex-grow0 flex-shrink0 image" style="width: 234rpx">
+            <e-img src="{{ v.tupian }}" pb="100"></e-img>
+        </view>
+        <view class="e-card-info flex-grow1 flex-shrink1">
+            <navigator class="title" url="/pages/changguan/detail?id={{ v.id }}"> {{ v.changguanmingcheng }} </navigator>
+            <navigator class="description" url="/pages/changguan/detail?id={{ v.id }}"> <rich-text nodes="{{ v.xiangqing }}"></rich-text> </navigator>
+        </view>
+    </view>
+</view>
+<v-footer />

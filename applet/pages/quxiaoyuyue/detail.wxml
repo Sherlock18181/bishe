@@ -1,0 +1,29 @@
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 编号 </view>
+            <view style="color: #999999"> {{ map.bianhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 课程名称 </view>
+            <view style="color: #999999"> {{ map.kechengmingcheng }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 类型 </view>
+            <view style="color: #999999"> <e-select-view module="kechengleixing" value="{{ map.leixing }}" select="id" show="leixingmingcheng"></e-select-view> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 预约人姓名 </view>
+            <view style="color: #999999"> {{ map.yuyuerenxingming }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+
+<view style="padding-bottom: 20rpx">
+    <view style="padding: 30rpx; line-height: 26px"> {{ map.quxiaoyuanyin }} </view>
+</view>
+<v-footer />

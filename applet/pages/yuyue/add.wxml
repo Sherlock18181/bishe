@@ -1,0 +1,40 @@
+<van-cell-group>
+    <van-cell title="编号">
+        <view> {{ form.bianhao }} </view>
+    </van-cell>
+
+    <van-cell title="课程名称">
+        <view> {{ form.kechengmingcheng }} </view>
+    </van-cell>
+
+    <van-cell title="类型">
+        <view> <e-select-view module="kechengleixing" value="{{ form.leixing }}" select="id" show="leixingmingcheng"></e-select-view> </view>
+    </van-cell>
+
+    <van-cell title="预约时间" value="{{ form.yuyueshijian }}" label="{{ errors.yuyueshijian }}" bind:click="onShowyuyueshijian" />
+    <van-popup show="{{ showyuyueshijian }}" closeable position="bottom" bind:close="onCloseyuyueshijian">
+        <van-datetime-picker
+            type="datetime"
+            show-toolbar="{{ false }}"
+            data-format="Y-m-d H:i:s"
+            value="{{ currentyuyueshijian }}"
+            data-name="form.yuyueshijian"
+            bind:input="onDate"
+        />
+    </van-popup>
+
+    <van-field
+        type="text"
+        error-message="{{ errors.yuyuerenxingming }}"
+        label="预约人姓名"
+        placeholder="输入预约人姓名"
+        value="{{ form.yuyuerenxingming }}"
+        bindinput="onInput"
+        data-name="form.yuyuerenxingming"
+    />
+    <van-field type="text" error-message="{{ errors.dianhua }}" label="电话" placeholder="输入电话" value="{{ form.dianhua }}" bindinput="onInput" data-name="form.dianhua" />
+    <van-field type="textarea" autosize placeholder="请输入备注..." value="{{ form.beizhu }}" data-name="form.beizhu" bindinput="onInput"></van-field>
+</van-cell-group>
+
+<van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">保存</van-button>
+<v-footer />

@@ -1,0 +1,34 @@
+<van-notice-bar mode="" text="欢迎使用健身房课程预约系统" scrollable="" color="#f60" background="#fff7cc" left-icon="volume-o"> </van-notice-bar>
+
+<swiper indicator-dots="{{ true }}" autoplay="{{ true }}" interval="{{ 5000 }}">
+    <swiper-item wx:for="{{ bhtList }}">
+        <e-img src="{{ item.image }}" pb="50"></e-img>
+    </swiper-item>
+</swiper>
+<view style="height: 10rpx; background: #f2f2f2"></view>
+
+<van-grid border center="{{ true }}" clickable="{{ false }}" column-num="{{ 2 }}" :icon-size="{{ 28 }}" gutter="0" :square="{{ false }}" direction="vertical">
+    <van-grid-item icon-color="#851e1e"  icon="checked" text="我的预约" url="/pages/yuyue/list_yuyueren" />
+    <van-grid-item icon-color="#1e3a85" icon="fire" text="取消预约" url="/pages/quxiaoyuyue/list_quxiaoren" />
+    <van-grid-item icon-color="#1fca44" icon="add" text="添加BMI值" url="/pages/bmizhi/add" />
+    <van-grid-item icon-color="#301fca" icon="todo-list" text="BMI值查询" url="/pages/bmizhi/list_tianjiaren" />
+</van-grid>
+
+<view style="height: 10rpx; background: #f2f2f2"></view>
+
+<van-nav-bar title="场馆" safe-area-inset-top="{{ false }}"> </van-nav-bar>
+
+<view style="height: 10rpx; background: #f2f2f2"></view>
+
+<view>
+    <view class="e-card-list" wx:for="{{ changguanlist2 }}" wx:for-item="v">
+        <view class="flex-grow0 flex-shrink0 image" style="width: 234rpx">
+            <e-img src="{{ v.tupian }}" pb="100"></e-img>
+        </view>
+        <view class="e-card-info flex-grow1 flex-shrink1">
+            <navigator class="title" url="/pages/changguan/detail?id={{ v.id }}"> {{ v.changguanmingcheng }} </navigator>
+            <navigator class="description" url="/pages/changguan/detail?id={{ v.id }}"> <rich-text nodes="{{ v.xiangqing }}"></rich-text> </navigator>
+        </view>
+    </view>
+</view>
+<v-footer />
