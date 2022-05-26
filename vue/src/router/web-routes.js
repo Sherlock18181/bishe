@@ -1,0 +1,67 @@
+export default [
+    {
+        path: "changguan",
+        name: "IndexchangguanList",
+        component: () => import("@/views/changguan/index"),
+        meta: { title: "场馆列表" },
+    },
+    {
+        path: "changguandetail",
+        name: "IndexchangguanDetail",
+        props: (route) => ({ id: route.query.id }),
+        component: () => import("@/views/changguan/webdetail"),
+        meta: { title: "场馆详情", authLogin: true, msg: true },
+    },
+    {
+        path: "kecheng",
+        name: "IndexkechengList",
+        component: () => import("@/views/kecheng/index"),
+        meta: { title: "课程列表" },
+    },
+    {
+        path: "kechengdetail",
+        name: "IndexkechengDetail",
+        props: (route) => ({ id: route.query.id }),
+        component: () => import("@/views/kecheng/webdetail"),
+        meta: { title: "课程详情", authLogin: true, msg: true },
+    },
+    {
+        path: "yuyueadd",
+        name: "IndexyuyueAdd",
+        component: () => import("@/views/yuyue/webadd"),
+        meta: { title: "预约添加", authLogin: true, msg: true },
+    },
+    {
+        path: "yuyuedetail",
+        name: "IndexyuyueDetail",
+        props: (route) => ({ id: route.query.id }),
+        component: () => import("@/views/yuyue/webdetail"),
+        meta: { title: "预约详情", authLogin: true, msg: true },
+    },
+    {
+        path: "quxiaoyuyueadd",
+        name: "IndexquxiaoyuyueAdd",
+        component: () => import("@/views/quxiaoyuyue/webadd"),
+        meta: { title: "取消预约添加", authLogin: true, msg: true },
+    },
+    {
+        path: "quxiaoyuyuedetail",
+        name: "IndexquxiaoyuyueDetail",
+        props: (route) => ({ id: route.query.id }),
+        component: () => import("@/views/quxiaoyuyue/webdetail"),
+        meta: { title: "取消预约详情", authLogin: true, msg: true },
+    },
+    {
+        path: "bmizhiadd",
+        name: "IndexbmizhiAdd",
+        component: () => import("@/views/bmizhi/webadd"),
+        meta: { title: "BMI值添加", authLogin: true, msg: true },
+    },
+    {
+        path: "bmizhidetail",
+        name: "IndexbmizhiDetail",
+        props: (route) => ({ id: route.query.id }),
+        component: () => import("@/views/bmizhi/webdetail"),
+        meta: { title: "BMI值详情", authLogin: true, msg: true },
+    },
+];
